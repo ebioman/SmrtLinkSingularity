@@ -19,4 +19,4 @@ E.g. sometimes building singularity images would crash my personal laptop - no i
 
  - execute an app
 
-        singularity exec MyImage.img blasr -v
+        singularity exec --bind $PWD MyImage.img blasr input.bam reference.fasta
