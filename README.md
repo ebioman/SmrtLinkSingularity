@@ -1,8 +1,7 @@
 # PacBio SmrtLink Image
 
-This is a singularity definition file which permits to package the current PacBio smrtlink tools (smrtlink_5.1.0.26412).
-The current final image is ~3.4 Gb large and is **not fully tested**.
-E.g. sometimes building singularity images would crash my personal laptop - no idea why...
+This is a singularity definition file which permits to package the current PacBio smrtlink tools (smrtlink_5.1.0.26412) + the isoseq3.
+The current final image is ~2.2 Gb large and is **not fully tested**.
 
 
 ## How to
@@ -20,3 +19,6 @@ E.g. sometimes building singularity images would crash my personal laptop - no i
  - execute an app
 
         singularity exec --bind $PWD MyImage.img blasr input.bam reference.fasta
+        
+ In theory, the ``--bind`` should not be necessary to mount the current folder and data passed to the Image directly.
+ This is working on my Fedora machine but **not** on some other CentOS7 machines.
