@@ -3,7 +3,7 @@ From: centos:latest
 
 %labels
 maintained by Emanuel Schmid @ VITAL-IT
-Version v1.0
+Version 5.1.0.26412
 
 %help
 This is the current PacBio collection of tools as in smrtlink version V5.1.0 from
