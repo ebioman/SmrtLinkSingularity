@@ -1,6 +1,5 @@
 Bootstrap: docker
 From: centos:latest
-IncludeCmd:yes
 
 %labels
 maintained by Emanuel Schmid @ VITAL-IT
@@ -15,10 +14,8 @@ the standard tools should be available, not the graphical interface though
 
 %environment
     SHELL=/bin/bash
-        
+
 %post
-# default mount points
-mkdir -p /scratch/cluster/monthly /scratch/local /scratch/cluster/weekly
 
 # install software
 yum update -y -q && yum install -y -q \
@@ -33,14 +30,11 @@ yum update -y -q && yum install -y -q \
         unzip \
         which \
         dirname
-    
 
 
-echo "download and extract smrtlink"
-wget -c https://downloads.pacbcloud.com/public/software/installers/smrtlink_5.1.0.26412.zip --no-check-certificate
-unzip -u -P 9rVkq3HT smrtlink_5.1.0.26412.zip
 
-echo "add new user if not existant"
+echo "add new user if not existent"
+
 SMRT_USER=smrtanalysis
 if ! grep -c "smrtanalysis:" /etc/passwd
 then
@@ -58,27 +52,28 @@ then
         chown smrtanalysis:users $SMRT
 fi
 
-#less ideal here, better at the end as we need to download otherwise each time in testing phase
-rm -rf smrtlink_5.1.0.26412.zip
 
-echo "now switch to smrt-user and start installation"
+echo "now switch to smrt-user"
 
 su $SMRT_USER
 SMRT_ROOT="/opt/pacbio/smrtlink"
-echo $SMRT_ROOT
+cd $SMRT
 
-if [ -d $SMRT_ROOT ] 
-then 
+echo "download and extract smrtlink"
+wget -c https://downloads.pacbcloud.com/public/software/installers/smrtlink_5.1.0.26412.zip --no-check-certificate
+unzip -u -P 9rVkq3HT smrtlink_5.1.0.26412.zip
+
+
+if [ -d $SMRT_ROOT ]
+then
         rm -rf $SMRT_ROOT
-        ./smrtlink_5.1.0.26412.run smrtlink --rootdir $SMRT_ROOT --smrttools-only       
+        ./smrtlink_5.1.0.26412.run smrtlink --rootdir $SMRT_ROOT --smrttools-only
 else
-        ./smrtlink_5.1.0.26412.run smrtlink --rootdir $SMRT_ROOT --smrttools-only       
+        ./smrtlink_5.1.0.26412.run smrtlink --rootdir $SMRT_ROOT --smrttools-only
 fi
 
 echo "cleaning up"
-#not working yet, need to figure out how I return sudo again - without password...
-#su
-#rm smrtlink_5.1.0.26412.*
+rm smrtlink_5.1.0.26412.*
 
 %environment
 export PATH=/opt/pacbio/smrtlink/smrtcmds/bin/:$PATH
