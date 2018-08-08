@@ -2,7 +2,7 @@ Bootstrap: docker
 From: centos:latest
 
 %labels
-maintained by Emanuel Schmid @ VITAL-IT
+Maintainer by Emanuel Schmid @ VITAL-IT
 Version v5.1.0.26412
 
 %help
@@ -13,11 +13,8 @@ It furthermore includes the
  - isoseq3
 
 In CentOS instead of Ubuntu to please admins
-
 the standard tools should be available, not the graphical interface though
 
-%environment
-    SHELL=/bin/bash
         
 %post
 
