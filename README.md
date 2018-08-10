@@ -3,6 +3,9 @@
 This is a singularity definition file which permits to package the current PacBio smrtlink tools (smrtlink_5.1.0.26412) + the isoseq3.
 The current final image is ~2.2 Gb large and is **not fully tested**.
 
+## Specfile
+
+The specfile is designed to work optimal in sandbox mode and therefore contains a few checks for users and directories which are not necessary for a normal build mode but will result in issues if a sandbox mode is used.
 
 ## How to
 
@@ -20,5 +23,3 @@ The current final image is ~2.2 Gb large and is **not fully tested**.
 
         singularity exec --bind $PWD MyImage.img blasr input.bam reference.fasta
         
- In theory, the ``--bind`` should not be necessary to mount the current folder and data passed to the Image directly.
- This is working on my Fedora machine but **not** on some other CentOS7 machines.
