@@ -3,6 +3,8 @@
 This is a singularity definition file which permits to package the current PacBio smrtlink tools (smrtlink_5.1.0.26412) + the isoseq3.
 The current final image is ~2.2 Gb large and is **not fully tested**.
 
+Update: now the legacy version v2.3 is added as well - not including the patches yet though
+
 
 ## How to
 
