@@ -44,7 +44,7 @@ tar -xvzf ${TARBALL} -C ${PREFIX}
 
 %environment
 export LD_LIBRARY_PATH=/usr/local/miniconda/lib/:${LD_LIBRARY_PATH}
-export PATH=/usr/local/miniconda/bin/:${PATH}
+export PATH=/usr/local/miniconda/bin/:/bin/:${PATH}
 export PYTHONPATH=/usr/local/miniconda/lib/python2.7/site-packages
 
 %runscript
