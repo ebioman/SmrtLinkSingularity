@@ -1,6 +1,10 @@
+Bootstrap: docker
+From: centos:latest
+
 %labels
 Maintainer by Emanuel Schmid @ VITAL-IT
 Version v2018.03.12-04.00
+
 
 %help
 Welcome to the FALCON falcon-2018.03.12-04.00 installation!
