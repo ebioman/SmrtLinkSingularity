@@ -3,10 +3,15 @@ All the definitions can be found as working singularity containers at the [Singu
 
 # PacBio SmrtLink Images
 
-This is a singularity definition file which permits to package the current PacBio smrtlink tools (smrtlink_5.1.0.26412) + the isoseq3.
-The current final image is ~2.2 Gb large and is **not fully tested**.
+This is a singularity definition file which permits to package the current PacBio smrtlink tools
 
-Update: now the legacy version v2.3 is added as well - not including the patches yet though
+ - V2.3 for legacy reasons
+ - smrtlink_5.1.0.26412 + the isoseq3
+ - smrtlink_5.1.0.26412 + FALCON UNZIP
+ - smrtlink v6.0.0.47841
+ 
+The images are rather large and **not fully tested**.
+
 
 
 # Falcon Unzip
@@ -14,8 +19,6 @@ Update: now the legacy version v2.3 is added as well - not including the patches
 I included now as well a FALCON binary installation in a singularity definition file.
 This installs via bioconda samtools, mummer and minimap2.
 It then pulls the release (latest stable: falcon-2018.03.12-04.00) and installs it in the same directory.
-
-
 
 
 
