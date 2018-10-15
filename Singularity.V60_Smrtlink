@@ -6,12 +6,10 @@ Maintainer by Emanuel Schmid @ VITAL-IT
 Version v6.0.0.47841
 
 %help
-Welcome to the smrtlink v510.26412 installation!
-This is the current PacBio collection of tools as in smrtlink version V5.1.0 from
+Welcome to the smrtlink v6.0.0.47841 installation!
+This is the current PacBio collection of tools as in smrtlink version 6.0.0.47841 from
 [I am link](https://www.pacb.com/support/software-downloads/).
-It furthermore includes the
- - isoseq3
- - FALCON (to do)
+
 Please invoke PB tools using "singularity exec --bind $PWD thisImage.img myCommand"
 valid ones are e.g.: blasr,quiver,pbalign,isoseq3,....
 
