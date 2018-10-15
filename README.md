@@ -8,7 +8,7 @@ This is a singularity definition file which permits to package the current PacBi
  - V2.3 for legacy reasons
  - smrtlink_5.1.0.26412 + the isoseq3
  - smrtlink_5.1.0.26412 + FALCON UNZIP
- - smrtlink v6.0.0.47841
+ - smrtlink v6.0.0.47841 (currently not working as PacBio does not distribute the software directly, download locally to make it work)
  
 The images are rather large and **not fully tested**.
 
